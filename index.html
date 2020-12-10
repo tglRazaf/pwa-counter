@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#13AA78">
+    <link rel="stylesheet" href="src/bulma.css">
+    <link rel="stylesheet" href="src/all.css">
+    <link rel="stylesheet" href="src/fontawesome.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/android.png">
+    <title>Cyber Counter</title>
+    <style>
+        button{
+            font-size: large;
+            width: 150px;
+            height: 70px;
+            margin: 20px;
+        }
+       
+        #startTime, #finTime{
+            padding: 5px;
+            font-size: 70px;
+            font-weight: bold;
+            color: #443343;
+        }
+        #sec{
+            animation: timer 1s infinite !important;
+            color: red;
+            
+        }
+        #money,h3{
+            font-weight: 500;
+            color: #3f3f3f;
+        }
+        @keyframes timer {
+            0%{
+                opacity: 1;
+            }
+            /* 50%{
+                transform: translateY(0px);
+            } */
+            100%{
+                opacity: 0;
+            }
+        }
+        .modal{
+            width: 500px;
+            margin: 50px auto;
+        }
+        #startTime{
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="time">
+            <h1 id="startTime">
+                <span><i class="fa fa-clock"></i></span> : <span id="heure"></span>
+                <span id="min"></span>
+                <span id="sec"></span>
+            </h1>
+            <h1 id="finTime"></h1>
+            <h1 id="stopTime"></h1>
+            <h3>Total : <span id="money"></span></h3>
+        </div>
+    </center>
+    <center class="btn">
+        <div class="btn-start ">
+            <button class="button is-light is-outlined" id="start">
+                <span class="icon has-text-link">
+                    <i class="fa fa-hourglass-start"></i>
+                </span>
+            </button>
+        </div>
+        <div class="btn-stop">
+            <button class="button is-light is-outlined has-text-link" id="stop">
+               <i class="fa fa-stop"></i> 
+            </button>
+        </div>
+    </center>
+    <center>
+        <input type="button" value="Change" class="button is-success" id="addPc">
+    </center>
+
+    <div class="modal">
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">ADD or REMOVE a pc</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+            <div class="field">
+                <label for="idPc">the pc id</label>
+                <input type="text" id="idPc" placeholder="enter the id" class="input">
+            </div>
+            <div class="field">
+                <label for="namePc">Name of the Pc</label>
+                <input type="text" id="namePc" placeholder="nom du pc" class="input">
+            </div>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success" id="saveBtn">Save changes</button>
+                <button class="button is-danger" id="removePc">Remove</button>
+            </footer>
+        </div>
+    </div>
+
+
+    <script src="src/app.js"></script>
+</body>
+</html>
