@@ -3,7 +3,7 @@
     "short_name": "cc",
     "start_url": "./",
     "background_color": "#1F916B",
-    "theme_color": "#13AA78",
+    "theme_color": "#009688",
     "display": "standalone",
     "icons": [
         {
